@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-    <script type="text/javascript">
-    (function() {
-        emailjs.init('user_6V5L8mFGSOJf8Hc3eLBUj');
-    })();
-    </script>
+    <script src="email.js"></script>
 
-    <script type="text/javascript">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+        <script type="text/javascript">
+        (function() {
+        emailjs.init("user_6V5L8mFGSOJf8Hc3eLBUj");
+        })();
+        </script>
+
+    <!-- <script type="text/javascript">
      window.onload = function() {
          document.getElementById('contact-form').addEventListener('submit' , function(event) {
              event.preventDefault();
@@ -29,7 +31,7 @@
 
          })
      }
-    </script>
+    </script> -->
 
     <link rel="stylesheet" href="style.css">
     <title>suleiman disu: Graphic Designer and frontend developer</title>
@@ -112,7 +114,7 @@
                     <label for="posters" class="posters">POSTERS</label>
                     <label for="product_designs" class="product_designs">PACKAGING DESIGNS</label>
                     <label for="social_media_designs" class="social_media_designs">SOCIAL MEDIA DESIGNS</label>
-                    <div class="slider"></div>
+                     <div class="slider"></div>
                 </nav>
 
                 <section>
@@ -140,18 +142,18 @@
                     <input type="hidden" name="contact_number">
 
                     <label for="firstname">First Name</label>
-                    <input type="text" id="firstname" name="firstname" placeholder="enter your first name here"/>
+                    <input type="text" id="toName" name="firstname" placeholder="enter your first name here"/>
 
                     <label for="lastname">Last Name</label>
-                    <input type="text" id="lastname" name="lastname" placeholder="enter your last name here"/>
+                    <input type="text" id="fromName" name="lastname" placeholder="enter your last name here"/>
 
                     <label for="jobtitle">Job Title</label>
                     <input type="text" id="jobtitle" name="jobtitle" placeholder="optional"/>
 
                     <label for="subject">Subject</label>
-                    <textarea id="subject" name="subject" placeholder = "write something..."></textarea>
+                    <textarea id="msg" name="subject" placeholder = "write something..."></textarea>
 
-                    <input type="submit" value="submit">
+                    <input type="submit" value="submit" onclick="sendMail()">
 
 
                 </form>
