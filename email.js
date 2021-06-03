@@ -1,4 +1,4 @@
-let submitButton = document.getElementById('submitButton')
+// let submitButton = document.getElementById('submitButton')
 
 function sendMail(params) {
     var tempParams =  {
