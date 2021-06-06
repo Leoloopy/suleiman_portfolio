@@ -32,7 +32,7 @@ function addScrollEffect(){
 
 
 let fullName = document.getElementById('fullName')
-let contact = document.getElementById('contact')
+let contact = document.getElementById('contact-address')
 // let jobTitle = document.getElementById('jobtitle')
 let message = document.getElementById('msg')
 let submit = document.getElementById('submit')
@@ -43,6 +43,9 @@ submit.addEventListener('click' , (e) => {
     
 if (fullName.value == "" || contact.value == "" || message.value == "") {
     alert('fill in the required fields')
+    fullName.style.border ="1px solid red"
+    contact.style.border ="1px solid red"
+    message.style.borderColor ="red"
 } 
 else {
     sendMail(fullName.value , contact.value, message.value)
@@ -50,6 +53,9 @@ else {
     fullName.value = ""
     contact.value = ""
     message.value = ""
+    fullName.style.border ="none"
+    contact.style.border ="none"
+    message.style.border ="none"
 }
 })
 }
@@ -57,8 +63,8 @@ validate();
 
 function sendMail(name ,email, msg) {
     emailjs.send("service_5qfgava","template_a80ilkm",{
-        to_name: name,
         from_name: email,
+        to_name: name,
         message: msg,
 });
 }
